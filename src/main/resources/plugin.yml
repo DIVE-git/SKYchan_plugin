@@ -1,0 +1,19 @@
+  name: SKYchanPlugin
+  api-version: 1.19
+  version: 1.0
+  main: org.gggsd.plugin.Main
+  description: Main functional server plugin
+  author: gggsd
+
+  commands:
+    island:
+      description: Основная команда для взаимодействия с островами
+      usage: /island [tp/home/homecreate] <Доп. аргументы>
+      aliases:
+        - ila
+    island tp:
+      description: Команда для телепортации на остров
+    island homecreate:
+      description: Команда для обновления координат hub-острова
+    island home:
+      description: Команда для перемещения на hub-остров
