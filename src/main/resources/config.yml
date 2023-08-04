@@ -21,11 +21,11 @@ lands_numbers: 3
 
 #Координаты центрального острова
 homexyz:
-  x: -19
-  y: 124
-  z: 22
+  x: 0
+  y: 0
+  z: 0
 land1:
-    x: -100
+    x: 0
     y: 0
     z: 0
     owner: empty
@@ -35,7 +35,7 @@ land2:
     z: 0
     owner: empty
 land3:
-    x: 0
-    y: 0
-    z: 0
-    owner: gggsd
+    x: 20
+    y: 12
+    z: 10
+    owner: empty

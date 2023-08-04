@@ -23,7 +23,7 @@ public class IslandCompleter implements TabCompleter {
         if(strings.length == 2) {
            if(strings[0].equalsIgnoreCase("tp")) {
                 List list = new ArrayList<>();
-                for(int i = 1; i <= plugin.getConfig().getInt("lands_numbers");i++) {
+                for(int i = 1; i <= plugin.landsNumber;i++) {
                     list.add("land"+i);
                 }
                 return list;

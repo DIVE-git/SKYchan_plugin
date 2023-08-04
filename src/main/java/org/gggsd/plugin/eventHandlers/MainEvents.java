@@ -18,15 +18,17 @@ public class MainEvents implements Listener {
         p.sendMessage(ChatColor.GOLD + "Привет! Статус всех островов сервера:");
 
         for (int i = 1;i <=plugin.getConfig().getInt("lands_numbers");i++) {
-            String yamlName = "land"+i+".owner";
-
-            if (plugin.getConfig().getString(yamlName).equalsIgnoreCase("empty")) {
-                p.sendMessage(ChatColor.GOLD+ "Остров "+i +ChatColor.GREEN+"   [ДОСТУПЕН]");
+            try {
+                if (plugin.islands[i-1].getPlayerOwner().equalsIgnoreCase("empty")) {
+                    p.sendMessage(ChatColor.GOLD + "Остров " + i + ChatColor.GREEN + "   [ДОСТУПЕН]");
+                } else {
+                    p.sendMessage(ChatColor.GOLD + "Остров " + i + ChatColor.RED + "   [ЗАНЯТ ИГРОКОМ: " + plugin.islands[i-1].getPlayerOwner() + "]");
+                }
             }
-            else {
-                p.sendMessage( ChatColor.GOLD+"Остров "+i +ChatColor.RED+"   [ЗАНЯТ ИГРОКОМ: "+plugin.getConfig().getString(yamlName)+"]");
-            }
+            catch (NullPointerException ex) {
 
+            p.sendMessage(ChatColor.RED+"ОШИБКА! Неккоректная настройка конфига! Остров " + i + " отсутствует!");
+            }
         }
     }
 }
